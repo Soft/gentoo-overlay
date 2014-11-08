@@ -24,5 +24,6 @@ src_configure() {
 
 src_install() {
 	dobin entr
+	doman entr.1
 }
 
