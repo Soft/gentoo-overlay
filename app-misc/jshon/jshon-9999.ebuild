@@ -7,7 +7,7 @@ EAPI=5
 inherit git-2 flag-o-matic
 
 DESCRIPTION="json parser for the shell."
-HOMEPAGE=""
+HOMEPAGE="http://kmkeen.com/jshon/"
 SRC_URI=""
 EGIT_REPO_URI="https://github.com/keenerd/jshon.git"
 
