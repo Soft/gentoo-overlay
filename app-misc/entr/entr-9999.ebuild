@@ -12,7 +12,7 @@ EHG_REPO_URI="https://bitbucket.org/eradman/entr"
 
 LICENSE="ISC"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~x86 ~amd64"
 IUSE=""
 
 DEPEND=""
