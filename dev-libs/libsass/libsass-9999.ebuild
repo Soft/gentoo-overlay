@@ -21,6 +21,10 @@ RDEPEND="${DEPEND}"
 
 src_install() {
 	emake DESTDIR="${D}" PREFIX=/usr install
+	insinto /usr/include
+	doins sass.h
+	doins sass_interface.h
+	doins sass2scss.h
 }
 
 
