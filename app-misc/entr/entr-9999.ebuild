@@ -4,7 +4,7 @@
 
 EAPI=5
 
-inherit mercurial flag-o-matic
+inherit mercurial
 
 DESCRIPTION="A utility for running arbitrary commands when files change."
 HOMEPAGE="http://entrproject.org"

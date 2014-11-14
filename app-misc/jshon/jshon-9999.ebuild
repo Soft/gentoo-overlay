@@ -4,7 +4,7 @@
 
 EAPI=5
 
-inherit git-2 flag-o-matic
+inherit git-2
 
 DESCRIPTION="json parser for the shell."
 HOMEPAGE="http://kmkeen.com/jshon/"
