@@ -20,8 +20,21 @@ DEPEND=""
 RDEPEND="${DEPEND}"
 
 src_install() {
+	cat <<-EOF > "${T}"/libsass.pc
+	prefix=/usr
+	libdir=/usr/lib
+	includedir=\${prefix}/include
+
+	Name: libsass
+	Description: ${DESCRIPTION}
+	Version: ${PV}
+	cflags: -I\${includedir}/sass
+	EOF
 	emake DESTDIR="${D}" PREFIX=/usr install
-	insinto /usr/include
+	insinto /usr/$(get_libdir)/pkgconfig
+	doins "${T}"/libsass.pc
+	dodir /usr/include/sass
+	insinto /usr/include/sass
 	doins sass.h
 	doins sass_interface.h
 	doins sass2scss.h

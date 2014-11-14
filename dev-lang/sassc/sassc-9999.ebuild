@@ -4,7 +4,7 @@
 
 EAPI=5
 
-inherit git-2
+inherit git-2 toolchain-funcs
 
 DESCRIPTION="libsass command line driver"
 HOMEPAGE="https://github.com/sass/sassc"
@@ -24,7 +24,7 @@ src_prepare() {
 }
 
 src_compile() {
-	emake SASS_LIBSASS_PATH=/usr
+	emake SASS_LIBSASS_PATH=/usr EXTRA_CFLAGS=$($(tc-getPKG_CONFIG) --cflags-only-I libsass)
 }
 
 src_install() {
