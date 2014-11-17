@@ -25,6 +25,6 @@ DEPEND=">=dev-python/python-dateutil-2.2[${PYTHON_USEDEP}]
 		>=dev-python/tzlocal-1.1.2[${PYTHON_USEDEP}]
 		dev-python/pytz[${PYTHON_USEDEP}]
 		crypt? (
-			>=dev-python/pycrypto-2.6
+			>=dev-python/pycrypto-2.6[${PYTHON_USEDEP}]
 		)"
 RDEPEND="${DEPEND}"
