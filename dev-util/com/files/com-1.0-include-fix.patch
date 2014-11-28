@@ -1,0 +1,11 @@
+--- com.c	2014-11-28 21:04:08.464721392 +0200
++++ com.patched.c	2014-11-28 21:05:12.555372395 +0200
+@@ -9,6 +9,8 @@
+  */
+ #include <string.h>
+ #include <stdio.h>
++#include <stdlib.h>
++#include <unistd.h>
+ int nflag=0;
+ int maxstat=0;
+ void make(char []);
