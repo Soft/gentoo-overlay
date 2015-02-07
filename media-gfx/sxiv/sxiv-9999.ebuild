@@ -29,6 +29,10 @@ src_prepare() {
 
 src_install() {
 	default
+	for size in 16 32 48 64 128; do
+		newicon -s $size icon/"${size}x${size}.png" sxiv.png
+	done
+	domenu sxiv.desktop
 	save_config config.h
 }
 
