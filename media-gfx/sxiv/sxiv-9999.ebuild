@@ -28,7 +28,7 @@ src_prepare() {
 }
 
 src_install() {
-	default
+	emake DESTDIR="${D}" PREFIX="/usr" install
 	for size in 16 32 48 64 128; do
 		newicon -s $size icon/"${size}x${size}.png" sxiv.png
 	done
