@@ -1,11 +1,11 @@
 --- Makefile	2015-02-09 19:46:21.000000000 +0200
-+++ Makefile-fixed	2015-02-25 14:28:43.087478387 +0200
++++ Makefile-fixed	2015-02-25 14:46:15.123878056 +0200
 @@ -1,7 +1,6 @@
 -LDFLAGS=-L/usr/local/lib
 -CFLAGS=-O3 -Wall -Wuninitialized -fomit-frame-pointer -funroll-loops \
 -	-fstrength-reduce -DNODEBUG `libpng-config --I_opts`
 -LDLIBS=-lpng -lz -lm
-+CC=gcc
++CC?=gcc
 +override LDFLAGS+=$(shell pkg-config --libs libpng) -lz -lm
 +override CFLAGS+=-DNODEBUG $(shell pkg-config --cflags libpng)
  
