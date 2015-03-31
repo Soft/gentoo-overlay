@@ -16,7 +16,7 @@ IUSE=""
 S="${WORKDIR/clearsans-1.00}"
 
 DEPEND="app-arch/unzip"
-RDEPEND="${DEPEND}"
+RDEPEND=""
 
 FONT_S="${S}/TTF"
 FONT_SUFFIX="ttf"

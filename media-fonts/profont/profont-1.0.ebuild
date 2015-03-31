@@ -15,7 +15,7 @@ KEYWORDS="~x86 ~amd64"
 IUSE=""
 
 DEPEND="app-arch/unzip"
-RDEPEND="${DEPEND}"
+RDEPEND=""
 
 S="${WORKDIR}/profont-x11"
 FONT_SUFFIX="pcf"

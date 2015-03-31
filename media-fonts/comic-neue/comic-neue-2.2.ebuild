@@ -15,7 +15,7 @@ KEYWORDS="~x86 ~amd64"
 IUSE=""
 
 DEPEND="app-arch/unzip"
-RDEPEND="${DEPEND}"
+RDEPEND=""
 
 FONT_S="${S}/OTF"
 FONT_SUFFIX="otf"
