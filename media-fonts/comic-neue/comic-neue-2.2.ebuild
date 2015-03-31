@@ -14,7 +14,7 @@ SLOT="0"
 KEYWORDS="~x86 ~amd64"
 IUSE=""
 
-DEPEND=""
+DEPEND="app-arch/unzip"
 RDEPEND="${DEPEND}"
 
 FONT_S="${S}/OTF"

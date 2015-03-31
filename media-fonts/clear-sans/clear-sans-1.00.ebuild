@@ -15,7 +15,7 @@ KEYWORDS="~x86 ~amd64"
 IUSE=""
 S="${WORKDIR/clearsans-1.00}"
 
-DEPEND=""
+DEPEND="app-arch/unzip"
 RDEPEND="${DEPEND}"
 
 FONT_S="${S}/TTF"
