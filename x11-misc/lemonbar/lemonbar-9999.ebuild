@@ -4,9 +4,9 @@
 
 EAPI=5
 
-inherit git-2
+inherit git-r3
 
-DESCRIPTION="bar ain't recursive - A lightweight xcb based bar"
+DESCRIPTION="A featherweight, lemon-scented, bar based on xcb"
 HOMEPAGE="https://github.com/LemonBoy/bar"
 SRC_URI=""
 EGIT_REPO_URI="https://github.com/LemonBoy/bar.git"
@@ -19,3 +19,7 @@ IUSE=""
 DEPEND="x11-libs/libxcb
 		>=dev-lang/perl-5"
 RDEPEND="x11-libs/libxcb"
+
+src_prepare() {
+	sed -i -e 's/-Os//' Makefile || die "Sed failed"
+}
