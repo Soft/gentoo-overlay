@@ -4,7 +4,7 @@
 
 EAPI=5
 
-inherit git-r3
+inherit git-r3 toolchain-funcs
 
 DESCRIPTION="NsJail is a process isolation tool for Linux."
 HOMEPAGE="https://google.github.io/nsjail/"
@@ -20,6 +20,7 @@ RDEPEND="${DEPEND}"
 
 src_prepare() {
 	epatch "${FILESDIR}/${PN}-Makefile.patch"
+	tc-export CC
 }
 
 src_install() {

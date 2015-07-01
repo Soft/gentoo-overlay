@@ -1,10 +1,10 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
 EAPI=5
 
-inherit git-2
+inherit git-r3 autotools
 
 DESCRIPTION="A C/C++ implementation of a Sass compiler"
 HOMEPAGE="http://libsass.org"
@@ -19,25 +19,8 @@ IUSE=""
 DEPEND=""
 RDEPEND="${DEPEND}"
 
-src_install() {
-	cat <<-EOF > "${T}"/libsass.pc
-	prefix=/usr
-	libdir=/usr/lib
-	includedir=\${prefix}/include
-
-	Name: libsass
-	Description: ${DESCRIPTION}
-	Version: ${PV}
-	cflags: -I\${includedir}/sass
-	EOF
-	emake DESTDIR="${D}" PREFIX=/usr install
-	insinto /usr/$(get_libdir)/pkgconfig
-	doins "${T}"/libsass.pc
-	dodir /usr/include/sass
-	insinto /usr/include/sass
-	doins sass.h
-	doins sass_interface.h
-	doins sass2scss.h
+src_prepare() {
+	eautoreconf
 }
 
 

@@ -4,9 +4,9 @@
 
 EAPI=5
 
-inherit git-2 eutils savedconfig
+inherit git-r3 eutils savedconfig toolchain-funcs
 
-DESCRIPTION="Simple (or small or suckless) X Image Viewer"
+DESCRIPTION="Simple X Image Viewer"
 HOMEPAGE="https://github.com/muennich/sxiv"
 SRC_URI=""
 EGIT_REPO_URI="https://github.com/muennich/sxiv.git"
@@ -17,12 +17,13 @@ KEYWORDS="~x86 ~amd64"
 IUSE=""
 
 DEPEND="x11-libs/libX11
-		media-libs/imlib2
+		media-libs/imlib2[X]
 		media-libs/libexif
 		media-libs/giflib"
 RDEPEND="${DEPEND}"
 
 src_prepare() {
+	tc-export CC
 	restore_config config.h
 	epatch_user
 }

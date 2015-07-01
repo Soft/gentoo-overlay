@@ -1,10 +1,10 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
 EAPI=5
 
-inherit git-2 toolchain-funcs
+inherit git-r3 autotools
 
 DESCRIPTION="libsass command line driver"
 HOMEPAGE="https://github.com/sass/sassc"
@@ -17,17 +17,10 @@ KEYWORDS="~x86 ~amd64"
 IUSE=""
 
 DEPEND="=dev-libs/libsass-9999"
-RDEPEND=""
+RDEPEND="${DEPEND}"
 
 src_prepare() {
-	sed -i -e 's/BUILD="static" $(MAKE) -C $(SASS_LIBSASS_PATH)/true/g' Makefile
+	eautoreconf
 }
 
-src_compile() {
-	emake SASS_LIBSASS_PATH=/usr EXTRA_CFLAGS=$($(tc-getPKG_CONFIG) --cflags-only-I libsass)
-}
-
-src_install() {
-	dobin bin/sassc
-}
 
