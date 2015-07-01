@@ -1,10 +1,10 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
 EAPI=5
 
-inherit git-2 eutils savedconfig
+inherit git-r3 eutils savedconfig toolchain-funcs
 
 DESCRIPTION="simple ncurses text editor"
 HOMEPAGE="http://tools.suckless.org/sandy"
@@ -20,12 +20,14 @@ DEPEND=""
 RDEPEND="${DEPEND}"
 
 src_prepare() {
+	tc-export CC PKG_CONFIG
 	restore_config config.h
+	epatch "${FILESDIR}/${PN}-config.patch"
 	epatch_user
 }
 
 src_install() {
-	default
+	emake install PREFIX=${D}/usr
 	save_config config.h
 }
 
