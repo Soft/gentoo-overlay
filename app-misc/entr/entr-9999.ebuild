@@ -4,7 +4,7 @@
 
 EAPI=5
 
-inherit mercurial
+inherit mercurial toolchain-funcs
 
 DESCRIPTION="A utility for running arbitrary commands when files change."
 HOMEPAGE="http://entrproject.org"
@@ -18,12 +18,15 @@ IUSE=""
 DEPEND=""
 RDEPEND="${DEPEND}"
 
+src_prepare() {
+	tc-export CC
+	cp Makefile.linux Makefile
+}
+
 src_configure() {
-	./configure
+	true;
 }
 
 src_install() {
-	dobin entr
-	doman entr.1
+	emake install PREFIX=${D}/usr
 }
-
