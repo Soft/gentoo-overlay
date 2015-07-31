@@ -21,6 +21,7 @@ RDEPEND="${DEPEND}"
 src_prepare() {
 	cp "${FILESDIR}/Makefile" "${S}/Makefile"
 	tc-export CC
+	epatch_user
 }
 
 src_install() {
