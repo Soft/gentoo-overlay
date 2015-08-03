@@ -22,7 +22,6 @@ ${PYTHON_DEPS}"
 RDEPEND="${DEPEND}"
 
 src_prepare() {
-	epatch "${FILESDIR}/missing-import.patch"
 	python_fix_shebang upload.py
 }
 
