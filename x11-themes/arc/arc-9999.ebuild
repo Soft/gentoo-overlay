@@ -13,7 +13,7 @@ EGIT_REPO_URI="https://github.com/horst3180/Arc-theme.git"
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~x86 ~amd64"
-IUSE="+gtk2 +gtk3 +light +darker +dark +transparency -metacity -unity -xfwm -gnome-shell -xfce-notify"
+IUSE="+gtk2 +gtk3 +light +darker +dark +transparency -cinnamon -metacity -unity -xfwm -gnome-shell -xfce-notify"
 
 DEPEND="x11-themes/gnome-themes-standard
 x11-themes/gtk-engines-murrine"
@@ -30,6 +30,7 @@ src_configure() {
 		$(use_enable light) \
 		$(use_enable darker) \
 		$(use_enable dark) \
+		$(use_enable cinnamon) \
 		$(use_enable transparency) \
 		$(use_enable metacity) \
 		$(use_enable unity) \
