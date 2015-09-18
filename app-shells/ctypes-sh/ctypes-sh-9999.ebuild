@@ -26,5 +26,5 @@ src_prepare() {
 src_install() {
 	emake DESTDIR="${D}" PREFIX="/usr" install
 	prune_libtool_files
-	dodoc AUTHORS NEWS README.md THANKS TODO
+	dodoc AUTHORS NEWS README.md TODO
 }
