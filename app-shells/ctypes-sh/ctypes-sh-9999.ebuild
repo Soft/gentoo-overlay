@@ -6,7 +6,7 @@ EAPI=5
 
 inherit git-r3 autotools
 
-DESCRIPTION=" A foreign function interface for bash."
+DESCRIPTION="A foreign function interface for bash."
 HOMEPAGE="http://ctypes.sh"
 SRC_URI=""
 EGIT_REPO_URI="https://github.com/taviso/ctypes.sh.git"
