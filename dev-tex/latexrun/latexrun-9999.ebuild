@@ -20,6 +20,10 @@ IUSE=""
 DEPEND="${PYTHON_DEPS}"
 RDEPEND="${DEPEND}"
 
+src_prepare() {
+	python_fix_shebang latexrun
+}
+
 src_install() {
 	dodoc README.md
 	dobin latexrun
