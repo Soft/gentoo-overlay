@@ -13,21 +13,15 @@ EGIT_REPO_URI="https://github.com/jgeboski/bitlbee-facebook.git"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~x86 ~amd64"
-IUSE="debug"
+IUSE=""
 
 DEPEND="dev-libs/glib:2
->=net-im/bitlbee-3.2.2[plugins]
->=sys-libs/zlib-1.2.8-r1"
+>=net-im/bitlbee-3.4.1[plugins]
+>=dev-libs/json-glib-1.0.4"
 RDEPEND="${DEPEND}"
 
 src_prepare() {
 	eautoreconf
-}
-
-src_configure() {
-	econf \
-		$(use_enable debug) \
-		--enable-minimal-flags
 }
 
 src_install() {
