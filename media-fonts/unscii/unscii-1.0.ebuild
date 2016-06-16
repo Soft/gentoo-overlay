@@ -44,7 +44,7 @@ FONT_S="${S}"
 
 FONT_SUFFIX=""
 if use otf; then
-	FONT_SUFFIX="${FONT_SUFFIX} otf"
+	FONT_SUFFIX+="${FONT_SUFFIX} otf"
 fi
 if use pcf; then
 	FONT_SUFFIX+="${FONT_SUFFIX} pcf"

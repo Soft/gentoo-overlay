@@ -21,5 +21,6 @@ DEPEND="x11-libs/libxcb
 RDEPEND="x11-libs/libxcb"
 
 src_prepare() {
+	epatch_user
 	sed -i -e 's/-Os//' Makefile || die "Sed failed"
 }

@@ -1,16 +1,16 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
+# $Id$
 
 EAPI=5
 
-inherit subversion vala gnome2
+inherit git-r3 vala gnome2 autotools
 
 DESCRIPTION="A simple font management application for Gtk+ Desktop Environments"
-HOMEPAGE="https://code.google.com/p/font-manager/"
+HOMEPAGE="https://fontmanager.github.io"
 SRC_URI=""
-ESVN_REPO_URI="http://font-manager.googlecode.com/svn/trunk/"
-VALA_MAX_API_VERSION=0.24
+EGIT_REPO_URI="https://github.com/FontManager/master.git"
+VALA_MAX_API_VERSION=0.28
 
 LICENSE="GPL-3"
 SLOT="0"
@@ -29,18 +29,20 @@ RDEPEND="gnome-base/gnome-common
 		>=dev-libs/libgee-0.1
 		>=dev-db/sqlite-3.8
 		>=gnome-extra/gucharmap-3.1[vala,introspection]
-		app-arch/file-roller
 		app-text/yelp-tools"
 DEPEND="${RDEPEND}
 		=dev-lang/vala-0.24*"
 
 src_unpack() {
-	subversion_src_unpack
+	git-r3_src_unpack
 }
 
 src_prepare() {
+	#epatch "${FILESDIR}/disable-preference-check.patch"
+	#epatch "${FILESDIR}/resource-path.patch"
+	#epatch "${FILESDIR}/text-tag.patch"
+	eautoreconf
 	vala_src_prepare
-	./autogen.sh --prefix=/usr
 	gnome2_src_prepare
 }
 
