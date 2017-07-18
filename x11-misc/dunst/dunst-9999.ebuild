@@ -7,7 +7,7 @@ EAPI=5
 inherit git-r3
 
 DESCRIPTION="lightweight and customizable notification daemon"
-HOMEPAGE="http://knopwob.org/dunst/index.html"
+HOMEPAGE="https://dunst-project.org"
 SRC_URI=""
 EGIT_REPO_URI="https://github.com/knopwob/dunst.git"
 LICENSE="BSD"
@@ -15,14 +15,21 @@ SLOT="0"
 KEYWORDS="~x86 ~amd64"
 IUSE=""
 
-DEPEND="sys-apps/dbus
-x11-libs/libXinerama
-x11-libs/libXft
+DEPEND="dev-libs/glib
+dev-libs/libxdg-basedir
+sys-apps/dbus
+x11-libs/cairo
+x11-libs/gtk+:2
 x11-libs/libXScrnSaver
-dev-libs/libxdg-basedir"
+x11-libs/libXft
+x11-libs/libXinerama
+x11-libs/libXrandr
+x11-libs/pango"
 RDEPEND="${DEPEND}"
 
 src_install() {
 	emake DESTDIR="${D}" PREFIX="/usr" install
-	dodoc CHANGELOG
+  for f in README.md CHANGELOG.md RELEASE_NOTES; do
+    dodoc "$f"
+  done
 }
