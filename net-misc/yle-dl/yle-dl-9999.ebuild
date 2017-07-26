@@ -1,8 +1,8 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=5
+EAPI=6
 
 PYTHON_COMPAT=( python2_7 )
 
@@ -20,13 +20,8 @@ IUSE=""
 
 DEPEND="net-misc/youtube-dl
 dev-python/pycrypto[${PYTHON_USEDEP}]
-media-video/rtmpdump"
+media-video/rtmpdump
+media-video/ffmpeg
+dev-lang/php[bcmath,crypt,curl,simplexml]"
 RDEPEND="${DEPEND}"
 
-src_compile() {
-	true
-}
-
-src_install() {
-	emake DESTDIR="${D}" prefix="/usr" install
-}
