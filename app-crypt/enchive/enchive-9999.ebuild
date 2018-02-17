@@ -21,12 +21,13 @@ SITEFILE="50enchive-gentoo.el"
 
 src_compile() {
 	emake CC="$(tc-getCC)" CFLAGS="${CFLAGS}"
+	use emacs && elisp-compile enchive-mode.el
 }
 
 src_install() {
 	emake install DESTDIR="${D}" PREFIX="/usr"
 	if use emacs; then
-		elisp-install "${PN}" enchive-mode.el
+		elisp-install "${PN}" enchive-mode.{el,elc}
 		elisp-site-file-install "${FILESDIR}/${SITEFILE}"
 	fi
 	dodoc 'README.md' 'NEWS.md'	
