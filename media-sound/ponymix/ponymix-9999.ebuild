@@ -21,7 +21,7 @@ RDEPEND="media-sound/pulseaudio
 x11-libs/libnotify"
 
 src_prepare() {
-    sed -i -e 's/^\(base_CXXFLAGS\s*=\).*/\1 -std=c++11 -DPONYMIX_VERSION=\\"\$(V)\\" /' \
+    sed -i -e 's/^\(base_CXXFLAGS\s*=\).*/\1 -std=c++14 -DPONYMIX_VERSION=\\"\$(V)\\" /' \
         Makefile || die "sed failed"
     sed -i "s/pkg-config/$(tc-getPKG_CONFIG)/g" Makefile || die "sed failed"
 }
@@ -30,7 +30,7 @@ src_compile() {
     emake CXX="$(tc-getCXX)"
 }
 
-pkg_install() {
+src_install() {
     dobin ponymix
     doman ponymix.1
     if use bash-completion; then
