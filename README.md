@@ -8,9 +8,9 @@ You can add this overlay to layman with `layman --add soft`
 
 * __optar__: Codec for encoding data on paper
 
-### app-backup
+### app-crypt
 
-* __duplicity__: Secure backup system using gnupg to encrypt data
+* __enchive__: Enchive is a tool to encrypt files to yourself for long-term archival.
 
 ### app-editors
 
@@ -22,8 +22,6 @@ You can add this overlay to layman with `layman --add soft`
 * __font-manager__: A simple font management application for Gtk+ Desktop Environments
 * __human__: convert bytes to human readable formats
 * __icdiff__: Improved colored diff
-* __jrnl__: A simple command line journal application that stores your journal in a plain text file.
-* __jshon__: json parser for the shell.
 * __malaga__: A Grammar Development Environment for Natural Languages
 * __mbox__: A lightweight sandbox tool for non-root users
 * __miru__: Tool for keeping track of seen tv-series' episodes.
@@ -41,6 +39,7 @@ You can add this overlay to layman with `layman --add soft`
 
 ### dev-lang
 
+* __rgbds__: Rednex GameBoy Development System
 * __sassc__: libsass command line driver
 * __wla-dx__: Yet Another GB-Z80/Z80/6502/65C02/6510/65816/HUC6280/SPC-700 Multi Platform Cross Assembler Package
 
@@ -52,10 +51,10 @@ You can add this overlay to layman with `layman --add soft`
 
 ### dev-python
 
-* __azure__: Windows Azure client APIs
+* __black__: The uncompromising Python code formatter
 * __i3-py__: Python based tools for i3 users and developers
-* __parsedatetime__: Parse human-readable date/time text.
-* __tzlocal__: tzinfo object for the local timezone
+* __pipsi__: pip script installer
+* __toml__: A Python library for parsing and creating TOML.
 * __yapf__: A formatter for Python files
 
 ### dev-tex
@@ -73,6 +72,7 @@ You can add this overlay to layman with `layman --add soft`
 * __crimson-text__: The Crimson Text typeface
 * __fira__: Mozilla's new typeface, used in Firefox OS
 * __font-awesome__: The iconic font
+* __iosevka__: A programmer's typeface.
 * __overpass__: An open source webfont family inspired by Highway Gothic.
 * __profont__: ProFont is a monospaced font created to be a most readable font for programming.
 * __tewi__: A font
@@ -103,15 +103,12 @@ You can add this overlay to layman with `layman --add soft`
 * __4chan-fetch__: Tool for automatically downloading images from 4chan threads
 * __yle-dl__: rtmpdump frontend for Yle servers
 
-### sys-apps
-
-* __dmd__: Daemon managing Daemons
-
 ### x11-misc
 
 * __dunst__: lightweight and customizable notification daemon
 * __lemonbar__: A featherweight, lemon-scented, bar based on xcb
 * __lighthouse__: A simple scriptable popup dialog to run on X.
+* __plotinus__: A searchable command palette in every modern GTK+ application
 * __wmutils-core__: Set of window manipulation tools
 * __xedgewarp__: window manager agnostic pointer warping between outputs
 
